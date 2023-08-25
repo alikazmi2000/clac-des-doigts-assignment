@@ -55,7 +55,7 @@ For detailed API documentation, please refer to the [Postman API Documentation](
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/alikazmi2000/clac-des-doigts.git
+   git clone https://github.com/alikazmi2000/clac-des-doigts-assignment.git
    ```
 2. Install Dependencys
   ```bash
