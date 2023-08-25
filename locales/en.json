@@ -6,7 +6,7 @@
 		"DELETE_SUCCESS": "Chicken Deleted Successfully.",
 		"DELETE_ERROR": "Unable To Delete Chicken ",
 		"UPDATE_SUCCESS": "Chicken Updated Successfully.",
-		"UPDATE_ERROR": "Unable To Updated Chicken ",
+		"UPDATE_ERROR": "Unable To Update Chicken ",
 		"GET_SUCCESS": "Chicken Fetched Successfully.",
 		"GET_ERROR": "Unable To Fetch Chicken ",
 		"GET_ALL_SUCCESS": "Chicken List Fetched Successfully.",
@@ -48,6 +48,7 @@
 	"IS_NUMERIC": "{{field}} should be numeric",
 	"IS_ARRAY": "{{field}} should be an array",
 	"ID_NOT_MATCHED": "Id mismatched",
+	"INVALID_ID": "Id is an invalid Mongo Id",
 	"IS_VALID_DATE": "Invalid Date for {{field}}",
 	"IS_VALID_DATETIME": "Invalid Date and time for {{field}}",
 	"NUMBER_LIMIT_NOT_MATCHED": "{{field}} should be greater than {{min}} and less than {{max}}."

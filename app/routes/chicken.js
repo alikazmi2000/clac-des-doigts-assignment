@@ -11,5 +11,30 @@ router.post(
     trimRequest.all,
     chickenValidator.createValidator,
     chickenController.createMethod
-  );
-  module.exports = router;
+);
+router.get(
+    '/:id',
+    trimRequest.all,
+    chickenValidator.getValidator,
+    chickenController.getMethod
+);
+router.get(
+    '/',
+    trimRequest.all,
+    chickenController.getAllMethod
+);
+router.put(
+    '/',
+    trimRequest.all,
+    chickenValidator.updateValidator,
+    chickenController.updateMethod
+);
+router.delete(
+    '/:id',
+    trimRequest.all,
+    chickenValidator.deleteValidator,
+    chickenController.deleteMethod
+);
+
+
+module.exports = router;

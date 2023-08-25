@@ -1,8 +1,9 @@
 const {
     validationResult,
 } = require('../middleware/utils');
-const { check, oneOf } = require('express-validator');
-exports.createValidator = [
+const { check, param } = require('express-validator');
+
+const commonValidator = [
     check('name')
         .exists()
         .withMessage('MISSING')
@@ -31,8 +32,44 @@ exports.createValidator = [
         .withMessage('IS_BOOLEAN')
         .not()
         .isEmpty()
+        .withMessage('IS_EMPTY')
+];
+exports.createValidator = [
+    ...commonValidator,
+    (req, res, next) => {
+        validationResult(req, res, next);
+    }
+];
+
+exports.updateValidator = [
+    ...commonValidator,
+    check('_id')
+        .isMongoId()
+        .withMessage('INVALID_ID')
+        .exists()
+        .withMessage('MISSING')
+        .not()
+        .isEmpty()
         .withMessage('IS_EMPTY'),
     (req, res, next) => {
         validationResult(req, res, next);
     }
 ];
+
+exports.getValidator = [
+    param('id')
+        .isMongoId()
+        .withMessage('INVALID_ID'),
+    (req, res, next) => {
+        validationResult(req, res, next);
+    }
+]
+
+exports.deleteValidator = [
+    param('id')
+        .isMongoId()
+        .withMessage('INVALID_ID'),
+    (req, res, next) => {
+        validationResult(req, res, next);
+    }
+]
