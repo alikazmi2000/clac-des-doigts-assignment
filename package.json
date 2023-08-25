@@ -2,14 +2,16 @@
   "name": "clas-des-doigts",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
-    "test": "npm run test",
     "clean": "node clean.js",
+    "mocha": "nyc mocha --timeout=5000 --exit",
+    "test": "npm run mocha",
+    "test_log": "npm run mocha -R spec test/*.js > report_mocha 2>&1",
     "seed": "node seed.js",
     "fresh": "npm run clean && npm run seed"
   },
-  "author": "",
+  "author": "Ali Kazmi",
   "license": "ISC",
   "dependencies": {
     "bcrypt-nodejs": "0.0.3",
@@ -40,8 +42,8 @@
     "winston": "^3.2.1"
   },
   "devDependencies": {
-    "chai": "^4.2.0",
-    "chai-http": "^4.3.0",
+    "chai": "^4.3.8",
+    "chai-http": "^4.4.0",
     "eslint": "^6.0.1",
     "eslint-config-formidable": "^4.0.0",
     "eslint-config-prettier": "^6.0.0",

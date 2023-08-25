@@ -7,3 +7,4 @@ logs
 *.log
 .eslintcache
 !.gitkeep
+.nyc_output

@@ -1,6 +1,6 @@
 const utils = require("../middleware/utils");
-const chicken = require("../models/chicken");
 const Chicken = require("../models/chicken")
+const {ErrorCodes} = require("../enums/index")
 
 /**
  * Create Chicken Api Method
@@ -17,6 +17,10 @@ const createMethod = async (req, res) => {
             steps,
             running
         })
+        if(!resultObject){
+            return utils.handleError(req, res, ErrorCodes.FIELD_INVALID, 'CHICKEN.UPDATE_ERROR');
+
+        }
         let successMsg = 'CHICKEN.CREATE_SUCCESS';
         return utils.handleSuccess(res, successMsg, resultObject);
     } catch (error) {
@@ -43,7 +47,7 @@ const updateMethod = async (req, res) => {
             }
         })
         if (!resultObject)
-            return utils.handleError(req, res, {}, 'CHICKEN.UPDATE_ERROR');
+            return utils.handleError(req, res, ErrorCodes.FIELD_INVALID, 'CHICKEN.UPDATE_ERROR');
 
         let successMsg = 'CHICKEN.UPDATE_SUCCESS';
         return utils.handleSuccess(res, successMsg, { _id });
@@ -63,7 +67,7 @@ const getMethod = async (req, res) => {
         const { id } = req.params
         const resultObject = await Chicken.findById(id);
         if (!resultObject)
-            return utils.handleError(req, res, {}, 'CHICKEN.GET_ERROR');
+            return utils.handleError(req, res, ErrorCodes.FIELD_INVALID, 'CHICKEN.GET_ERROR');
 
         let successMsg = 'CHICKEN.GET_SUCCESS';
         return utils.handleSuccess(res, successMsg, resultObject);
@@ -82,7 +86,7 @@ const getAllMethod = async (req, res) => {
     try {
         const resultObject = await Chicken.find();
         if (!resultObject)
-            return utils.handleError(req, res, {}, 'CHICKEN.GET_ERROR');
+            return utils.handleError(req, res, ErrorCodes.FIELD_INVALID, 'CHICKEN.GET_ERROR');
 
         let successMsg = 'CHICKEN.GET_SUCCESS';
         return utils.handleSuccess(res, successMsg, resultObject);
@@ -106,7 +110,7 @@ const deleteMethod = async (req, res) => {
 
         const resultObject = await Chicken.findOneAndDelete({ _id: id })
         if (!resultObject)
-            return utils.handleError(req, res, {}, 'CHICKEN.DELETE_ERROR');
+            return utils.handleError(req, res, ErrorCodes.FIELD_INVALID, 'CHICKEN.DELETE_ERROR');
 
         let successMsg = 'CHICKEN.DELETE_SUCCESS';
         return utils.handleSuccess(res, successMsg, { _id: id });
@@ -126,7 +130,7 @@ const runMethod = async (req, res) => {
         const { id } = req.params;
         const resultObject = await Chicken.updateOne({ _id: id }, { $inc: { quantity: 1, "steps": 1 } });
         if (!resultObject)
-            return utils.handleError(req, res, {}, 'CHICKEN.RUN_ERROR');
+            return utils.handleError(req, res, ErrorCodes.FIELD_INVALID, 'CHICKEN.RUN_ERROR');
 
         let successMsg = 'CHICKEN.RUN_SUCCESS';
         return utils.handleSuccess(res, successMsg, { _id: id });
