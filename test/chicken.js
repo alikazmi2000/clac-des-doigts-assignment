@@ -1,15 +1,13 @@
 process.env.NODE_ENV = 'test';
-process.env.JWT_SECRET = 'MyUltraSecurePassWordIWontForgetToChange';
-
 const faker = require('faker');
 const chai = require('chai');
 const chaiHttp = require('chai-http');
-
+const should = chai.should();
 const server = require('../server');
 const Chicken = require('../app/models/chicken');
+const mock = require("../helpers/mock")
 chai.use(chaiHttp);
 // const helper = require('../helpers/tests');
-const should = chai.should();
 const apiName = '/chicken';
 const chickenProp = {
   name: faker.random.words(),
@@ -162,5 +160,9 @@ describe('*********** CHICKEN ***********', () => {
           }
         });
     });
+  });
+
+  after(() => {
+    mock.deleteTestRecords(Chicken, createdID);
   });
 })
