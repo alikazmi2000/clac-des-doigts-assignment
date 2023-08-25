@@ -5,9 +5,9 @@ const items = [
   {
     _id: new ObjectID(to24DigitObjectId(leadingObjectId.chicken, 0)),
     name:"Chicken One",
-    weight:Math.random()%100,
+    weight:faker.random.number({ min: 1, max: 100 }),
     birthday:faker.date.past(),
-    steps:Math.random()%100,
+    steps:faker.random.number({ min: 1, max: 100 }),
     isRunning:true,
     createdAt: faker.date.past(),
     updatedAt: faker.date.recent()
@@ -15,9 +15,9 @@ const items = [
   {
     _id: new ObjectID(to24DigitObjectId(leadingObjectId.chicken, 1)),
     name:"Chicken Two",
-    weight:Math.random()%100,
+    weight:faker.random.number({ min: 1, max: 100 }),
     birthday:faker.date.past(),
-    steps:Math.random()%100,
+    steps:faker.random.number({ min: 1, max: 100 }),
     isRunning:true,
     createdAt: faker.date.past(),
     updatedAt: faker.date.recent()
@@ -25,9 +25,9 @@ const items = [
   {
     _id: new ObjectID(to24DigitObjectId(leadingObjectId.chicken, 2)),
     name:"Chicken Three",
-    weight:Math.random()%100,
+    weight:faker.random.number({ min: 1, max: 100 }),
     birthday:faker.date.past(),
-    steps:Math.random()%100,
+    steps:faker.random.number({ min: 1, max: 100 }),
     isRunning:true,
     createdAt: faker.date.past(),
     updatedAt: faker.date.recent()
