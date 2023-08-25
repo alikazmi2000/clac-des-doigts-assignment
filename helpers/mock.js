@@ -4,5 +4,6 @@ exports.to24DigitObjectId = (leading, num) => {
   };
 
   exports.leadingObjectId = {
-    chicken: '01',
+    farm: '01',
+    chicken: '02',
   };

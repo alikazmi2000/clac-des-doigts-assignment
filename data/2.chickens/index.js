@@ -5,6 +5,7 @@ const items = [
   {
     _id: new ObjectID(to24DigitObjectId(leadingObjectId.chicken, 0)),
     name:"Chicken One",
+    farm:new ObjectID(to24DigitObjectId(leadingObjectId.farm, 0)),
     weight:faker.random.number({ min: 1, max: 100 }),
     birthday:faker.date.past(),
     steps:faker.random.number({ min: 1, max: 100 }),
@@ -15,6 +16,7 @@ const items = [
   {
     _id: new ObjectID(to24DigitObjectId(leadingObjectId.chicken, 1)),
     name:"Chicken Two",
+    farm:new ObjectID(to24DigitObjectId(leadingObjectId.farm, 0)),
     weight:faker.random.number({ min: 1, max: 100 }),
     birthday:faker.date.past(),
     steps:faker.random.number({ min: 1, max: 100 }),
@@ -25,6 +27,7 @@ const items = [
   {
     _id: new ObjectID(to24DigitObjectId(leadingObjectId.chicken, 2)),
     name:"Chicken Three",
+    farm:new ObjectID(to24DigitObjectId(leadingObjectId.farm, 1)),
     weight:faker.random.number({ min: 1, max: 100 }),
     birthday:faker.date.past(),
     steps:faker.random.number({ min: 1, max: 100 }),

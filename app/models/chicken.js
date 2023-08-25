@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
 const mongoosePaginate = require('mongoose-paginate-v2');
 const mongooseDelete = require('mongoose-delete');
+const Schema = mongoose.Schema;
 
 const ChickenSchema = new mongoose.Schema(
   {
@@ -22,7 +23,11 @@ const ChickenSchema = new mongoose.Schema(
     isRunning: {
       type: Boolean,
       default: false
-    }
+    },
+    farm: {
+      type: Schema.ObjectId,
+      ref: "farm",
+  },
   },
   {
     versionKey: false,
