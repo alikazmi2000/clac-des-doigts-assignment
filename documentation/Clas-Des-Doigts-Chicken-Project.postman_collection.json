@@ -1,0 +1,160 @@
+{
+	"info": {
+		"_postman_id": "83a64d89-bb82-4e01-a72b-32a6fbe34589",
+		"name": "Clas-Des-Doigts-Chicken-Project",
+		"description": "This Collection is used for Chicken Web Service Apis\n\nThe enviorment file used is chicken-dev-env",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Create",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Chicken One\",\n    \"weight\": 21,\n    \"birthday\": \"2022-08-19\",\n    \"running\": true\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/chicken",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"chicken"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Patch",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Chicken One\",\n    \"_id\" : \"64e8cb9f59526d00786692aa\"\n   \n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/chicken",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"chicken"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetOne",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/chicken/64e8cb9f59526d00786692aa",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"chicken",
+						"64e8cb9f59526d00786692aa"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/chicken/64e8c72ec0b1c9d06507481b",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"chicken",
+						"64e8c72ec0b1c9d06507481b"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetAll",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/chicken",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"chicken"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Run",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/chicken/run/64e8cb9f59526d00786692aa",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"chicken",
+						"run",
+						"64e8cb9f59526d00786692aa"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Chicken One\",\n    \"_id\" : \"64e8be1708b6836e83bf7af4\",\n    \"weight\": 43,\n    \"birthday\": \"2022-08-19\",\n    \"running\": true,\n    \"steps\": 23\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/chicken",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"chicken"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

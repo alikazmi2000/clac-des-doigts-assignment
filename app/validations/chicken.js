@@ -13,13 +13,6 @@ const commonValidator = [
     check('birthday')
         .optional()
         .isDate(), //iso format YYYY-MM-DD
-    check('weight')
-        .isNumeric()
-        .exists()
-        .withMessage('MISSING')
-        .not()
-        .isEmpty()
-        .withMessage('IS_EMPTY'),
     check('steps')
         .optional()
         .isNumeric()
@@ -36,6 +29,13 @@ const commonValidator = [
 ];
 exports.createValidator = [
     ...commonValidator,
+    check('weight')
+        .isNumeric()
+        .exists()
+        .withMessage('MISSING')
+        .not()
+        .isEmpty()
+        .withMessage('IS_EMPTY'),
     (req, res, next) => {
         validationResult(req, res, next);
     }
@@ -51,10 +51,41 @@ exports.updateValidator = [
         .not()
         .isEmpty()
         .withMessage('IS_EMPTY'),
+    check('weight')
+        .isNumeric()
+        .exists()
+        .withMessage('MISSING')
+        .not()
+        .isEmpty()
+        .withMessage('IS_EMPTY'),
     (req, res, next) => {
         validationResult(req, res, next);
     }
 ];
+
+exports.patchValidator = [
+    ...commonValidator,
+    check('weight')
+        .optional()
+        .isNumeric()
+        .exists()
+        .withMessage('MISSING')
+        .not()
+        .isEmpty()
+        .withMessage('IS_EMPTY'),
+    check('_id')
+        .isMongoId()
+        .withMessage('INVALID_ID')
+        .exists()
+        .withMessage('MISSING')
+        .not()
+        .isEmpty()
+        .withMessage('IS_EMPTY'),
+    (req, res, next) => {
+        validationResult(req, res, next);
+    }
+];
+
 
 exports.getValidator = [
     param('id')
@@ -66,6 +97,15 @@ exports.getValidator = [
 ]
 
 exports.deleteValidator = [
+    param('id')
+        .isMongoId()
+        .withMessage('INVALID_ID'),
+    (req, res, next) => {
+        validationResult(req, res, next);
+    }
+]
+
+exports.runValidator = [
     param('id')
         .isMongoId()
         .withMessage('INVALID_ID'),

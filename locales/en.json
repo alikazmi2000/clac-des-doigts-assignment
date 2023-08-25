@@ -10,7 +10,9 @@
 		"GET_SUCCESS": "Chicken Fetched Successfully.",
 		"GET_ERROR": "Unable To Fetch Chicken ",
 		"GET_ALL_SUCCESS": "Chicken List Fetched Successfully.",
-		"GET_ALL_ERROR": "Unable To Fetch  Chicken List "
+		"GET_ALL_ERROR": "Unable To Fetch  Chicken List ",
+		"RUN_SUCCESS": "Chicken Run Steps Incremented Successfully.",
+		"RUN_ERROR": "Unable To Increment  Chicken Run Steps "
 
 	},
 	

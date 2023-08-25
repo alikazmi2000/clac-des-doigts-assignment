@@ -100,11 +100,11 @@ const getAllMethod = async (req, res) => {
 const deleteMethod = async (req, res) => {
     try {
         const { id } = req.params;
-       
+
         //This is for shallow delete
         // const resultObject = await Chicken.updateOne({ _id: id },{$set:{deleted:false}})
 
-        const resultObject = await Chicken.findOneAndDelete({_id:id})
+        const resultObject = await Chicken.findOneAndDelete({ _id: id })
         if (!resultObject)
             return utils.handleError(req, res, {}, 'CHICKEN.DELETE_ERROR');
 
@@ -116,6 +116,26 @@ const deleteMethod = async (req, res) => {
     }
 }
 
+/**
+ * Run Chicken Api Method
+ * @param {Object} req - request object
+ * @param {Object} res - response object
+ */
+const runMethod = async (req, res) => {
+    try {
+        const { id } = req.params;
+        const resultObject = await Chicken.updateOne({ _id: id }, { $inc: { quantity: 1, "steps": 1 } });
+        if (!resultObject)
+            return utils.handleError(req, res, {}, 'CHICKEN.RUN_ERROR');
+
+        let successMsg = 'CHICKEN.RUN_SUCCESS';
+        return utils.handleSuccess(res, successMsg, { _id: id });
+    } catch (error) {
+
+        utils.handleError(req, res, error, 'CHICKEN.RUN_ERROR');
+    }
+}
+
 
 module.exports = {
     createMethod,
@@ -123,5 +143,6 @@ module.exports = {
     getAllMethod,
     updateMethod,
     deleteMethod,
+    runMethod
 
 }
