@@ -1,0 +1,54 @@
+{
+	
+	"CHICKEN":  {
+		"CREATE_SUCCESS": "Chicken Created Successfully.",
+		"CREATE_ERROR": "Unable To Create Chicken ",
+		"DELETE_SUCCESS": "Chicken Deleted Successfully.",
+		"DELETE_ERROR": "Unable To Delete Chicken ",
+		"UPDATE_SUCCESS": "Chicken Updated Successfully.",
+		"UPDATE_ERROR": "Unable To Updated Chicken ",
+		"GET_SUCCESS": "Chicken Fetched Successfully.",
+		"GET_ERROR": "Unable To Fetch Chicken ",
+		"GET_ALL_SUCCESS": "Chicken List Fetched Successfully.",
+		"GET_ALL_ERROR": "Unable To Fetch  Chicken List "
+
+	},
+	
+	"ERROR": {
+		"INTERNAL_SERVER_ERROR": "Internal Error of Server.",
+		"NOT_FOUND": "Not Found.",
+		"BAD_REQUEST": "Bad Request.",
+		"ID_MALFORMED_GENERAL": "Id is malformed.",
+		"ID_MALFORMED": "{{field}} is malformed.",
+		"UNAUTHORIZED": "You are not authorized.",
+		"NOT_AUTHORIZED_FOR_THIS_ACTION": "You are not authorized for this particular action.",
+		"INVALID_REQUEST": "Request is Invalid.",
+		"ENDPOINT_NOT_FOUND": "Endpoint Not Found.",
+		"METHOD_NOT_ALLOWED": "Method Not Allowed.",
+		"TOO_MANY_REQUESTS": "Too many requests.",
+		"FORBIDDEN": "Forbidden Request.",
+		"FAILED_TO_CONNECT_TO_THE_DATABASE": "Failed to connect to the database.",
+		"UNPROCESSABLE_ENTITY": "Unprocessable request.",
+		"INVALID_OR_EMPTY_PAYLOAD": "Invalid or empty payload.",
+		"API_IS_CURRENTLY_UNDER_MAINTENANCE": "Api is currently under maintenance.",
+		"INVALID_CACHE_CONFIGURATION": "Invalid Cache Configuration.",
+		"INVALID_CREDENTIALS": "Invalid Credentials.",
+		"AUTH_VALIDATION_ERROR": "Auth Validation Error.",
+		"ITEM_NOT_FOUND": "Unable to find the requested item.",
+		"ITEM_ALREADY_EXISTS": "Item already exists.",
+		"FIELD_INVALID": "Field Invalid.",
+		"UNKNOWN_ERROR": "Unknown Error.",
+		"UNABLE_TO_FIND_ITEM": "Unable to find the {{name}} by provided details."
+	},
+	"MISSING": "{{field}} is required.",
+	"IS_EMPTY": "{{field}} should not be empty.",
+	"IS_BOOLEAN": "{{field}} should be boolean.",
+	"EMAIL_IS_NOT_VALID": "Email is not valid.",
+	"PASSWORD_TOO_SHORT_MIN_5": "Password is too short, min character should be 5.",
+	"IS_NUMERIC": "{{field}} should be numeric",
+	"IS_ARRAY": "{{field}} should be an array",
+	"ID_NOT_MATCHED": "Id mismatched",
+	"IS_VALID_DATE": "Invalid Date for {{field}}",
+	"IS_VALID_DATETIME": "Invalid Date and time for {{field}}",
+	"NUMBER_LIMIT_NOT_MATCHED": "{{field}} should be greater than {{min}} and less than {{max}}."
+}
